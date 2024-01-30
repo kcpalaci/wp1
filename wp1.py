@@ -8,6 +8,7 @@ import sys
 
 def read_file():
     try:
+        str(sys.argv[1])[-4:] == ".txt"
         with open(sys.argv[1], "r") as original_file:
             original_file.seek(0, 2)
             num_bytes = original_file.tell()
@@ -24,6 +25,9 @@ def read_file():
     except FileNotFoundError:
         print("\nYour file could not be found.")
         print("Please enter a valid, existing txt file.")
+        sys.exit()
+    except AssertionError:
+        print("\nYou must provide files with the extension .txt")
         sys.exit()
 
 
