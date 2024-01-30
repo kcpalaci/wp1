@@ -28,9 +28,14 @@ def read_file():
 
 
 def encrypt_file(rev_byte_list):
-    with open(sys.argv[2], "w") as encrypted_file:
-        for byte in rev_byte_list:
-            encrypted_file.write(byte)
+    try:
+        assert str(sys.argv[2])[-4:] == ".txt"
+        with open(sys.argv[2], "w") as encrypted_file:
+            for byte in rev_byte_list:
+                encrypted_file.write(byte)
+    except AssertionError:
+        print("\nYour encrypted file's extension must be .txt")
+        sys.exit()
 
 
 if __name__ == "__main__":
