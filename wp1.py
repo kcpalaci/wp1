@@ -17,11 +17,11 @@ def read_file():
                 byte_list.append(original_file.read(1))
                 original_file.seek(i+1)
             if not byte_list:
-                print("\nYou provided an empty txt file. Please enter a non-empty file to encrypt.\n")
+                print("\nYou provided an empty txt file. Please enter a non-empty file to encrypt.")
                 sys.exit()
             return reversed(byte_list)
     except FileNotFoundError:
-        print("\nYour file could not be found. Please enter a valid, existing txt file.\n")
+        print("\nYour file could not be found. Please enter a valid, existing txt file.")
         sys.exit()
     
 
