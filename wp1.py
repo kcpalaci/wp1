@@ -22,6 +22,7 @@ def read_file():
             return reversed(byte_list)
     except FileNotFoundError:
         print("\nYour file could not be found. Please enter a valid, existing txt file.\n")
+        sys.exit()
     
 
 def encrypt_file(rev_byte_list):
